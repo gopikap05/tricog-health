@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tricog Health</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/tricog-health/assets/favicon-_8cXR8Ri.png" />
+
+    <!-- Google Fonts: DM Sans (headings, with italics) + Open Sans (paragraphs and everything else) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,500..700;1,9..40,500..700&family=Open+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/tricog-health/assets/index-DzdD1ifI.js"></script>
+    <link rel="stylesheet" crossorigin href="/tricog-health/assets/index-4v6ZrPRr.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Lenis smooth scroll (body footer) -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@0.2.28/bundled/lenis.js"></script>
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+        infinite: false,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>
